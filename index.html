@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>StreamVault - Netflix Glass Cinema & Streaming Hub</title>
+  <meta name="description" content="StreamVault - A sleek, modern Netflix & Apple Glass styled streaming portal featuring 188+ curated streaming sources across Movies, TV Series, Anime, and Live TV.">
+  <meta name="theme-color" content="#050609">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="theme-cinema">
+  <!-- Apple-Style Floating Glass Navigation Bar -->
+  <header id="top-bar" class="apple-glass-header">
+    <div class="nav-left">
+      <!-- Modern Cinematic Brandmark (Zero AI Material Clipart) -->
+      <div class="brand-mark" id="btn-brand-home" title="Return to Top">
+        <div class="brand-prism">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <path d="M6 8C6 5.79 7.79 4 10 4H14L26 24C26 26.21 24.21 28 22 28H18L6 8Z" fill="url(#prismGrad1)" opacity="0.95"/>
+            <path d="M26 8C26 5.79 24.21 4 22 4H18L6 24C6 26.21 7.79 28 10 28H14L26 8Z" fill="url(#prismGrad2)" opacity="0.85"/>
+            <circle cx="16" cy="16" r="3.5" fill="#FFFFFF"/>
+            <defs>
+              <linearGradient id="prismGrad1" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#E50914"/>
+                <stop offset="0.5" stop-color="#9333EA"/>
+                <stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+              <linearGradient id="prismGrad2" x1="26" y1="4" x2="6" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#06B6D4"/>
+                <stop offset="0.5" stop-color="#3B82F6"/>
+                <stop offset="1" stop-color="#E50914"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-typography">
+          <span class="brand-main">STREAM<span class="brand-glow">VAULT</span></span>
+        </div>
+      </div>
+
+      <!-- Netflix Style Navigation Tabs -->
+      <nav class="netflix-nav-links" id="netflix-nav-links">
+        <button class="nav-link active" data-target="home">Home</button>
+        <button class="nav-link" data-target="movies">Movies</button>
+        <button class="nav-link" data-target="anime">Anime</button>
+        <button class="nav-link" data-target="live">Live TV</button>
+        <button class="nav-link" data-target="all">All 188</button>
+      </nav>
+    </div>
+
+    <!-- Center: Apple Spotlight Search Bar -->
+    <div class="nav-center">
+      <div class="spotlight-search-box" id="hub-search-container">
+        <svg class="search-glyph" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search 188+ streaming sources, movies, anime..." autocomplete="off">
+        <button class="search-clear-btn hidden" id="btn-clear-search">✕</button>
+      </div>
+    </div>
+
+    <!-- Right: Shield Status & GitHub Link -->
+    <div class="nav-right">
+      <div class="apple-glass-pill" id="btn-shield-pill" title="Recommended with uBlock Origin or Brave Shields for optimal ad-free streaming">
+        <span class="pulse-emerald-dot"></span>
+        <span class="shield-counter-label" id="shield-count-badge">188 Services</span>
+      </div>
+      <a href="https://github.com/Programit1/streamvault" target="_blank" rel="noopener noreferrer" class="glass-icon-link" title="View Source on GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="main-container" id="hub-container">
+    <!-- Netflix Billboard Hero Spotlight -->
+    <section class="netflix-billboard" id="billboard-section">
+      <div class="billboard-backdrop-glow" id="billboard-glow"></div>
+      <div class="billboard-content">
+        <div class="billboard-meta-row">
+          <span class="apple-tag tag-exclusive">FEATURED PORTAL</span>
+          <span class="apple-tag tag-quality" id="hero-tag-quality">4K ULTRA HD</span>
+          <span class="apple-tag tag-shield">VERIFIED SOURCE</span>
+        </div>
+        <h1 class="billboard-title" id="hero-title">MOVY CINEMA</h1>
+        <p class="billboard-desc" id="hero-desc">
+          Stream thousands of movies, TV shows, and anime with auto-next playback, high-bitrate servers, and responsive multi-sources.
+        </p>
+        <div class="billboard-actions">
+          <button class="btn-hero-play" id="btn-hero-play">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Launch Stream</span>
+          </button>
+          <button class="btn-hero-favorite" id="btn-hero-fav">
+            <span id="hero-fav-icon">☆</span>
+            <span id="hero-fav-text">Favorite</span>
+          </button>
+        </div>
+      </div>
+      <!-- Featured Quick Switchers -->
+      <div class="billboard-switchers" id="hero-switchers">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Netflix-Style Shelf 1: Pinned Favorites -->
+    <section class="netflix-shelf hidden" id="favorites-section">
+      <div class="shelf-header">
+        <h2 class="shelf-title">⭐ Your Favorites</h2>
+        <span class="shelf-count" id="count-favorites-badge">0 Titles</span>
+      </div>
+      <div class="shelf-carousel" id="favorites-carousel">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Netflix-Style Shelf 2: Trending & Popular -->
+    <section class="netflix-shelf" id="shelf-trending">
+      <div class="shelf-header">
+        <h2 class="shelf-title">🔥 Trending & Popular</h2>
+        <span class="shelf-hint">Top-rated curated streaming portals</span>
+      </div>
+      <div class="shelf-carousel" id="carousel-trending">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Netflix-Style Shelf 3: 4K Movies & Shows -->
+    <section class="netflix-shelf" id="shelf-movies">
+      <div class="shelf-header">
+        <h2 class="shelf-title">🎬 Movies & TV Series</h2>
+        <span class="shelf-hint">Dedicated servers, P-Stream forks & multi-sources</span>
+      </div>
+      <div class="shelf-carousel" id="carousel-movies">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Netflix-Style Shelf 4: Anime Vault -->
+    <section class="netflix-shelf" id="shelf-anime">
+      <div class="shelf-header">
+        <h2 class="shelf-title">⚡ Anime & Cartoons</h2>
+        <span class="shelf-hint">Sub, dub, simulcasts & classic animations</span>
+      </div>
+      <div class="shelf-carousel" id="carousel-anime">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Netflix-Style Shelf 5: Live Channels & Video Hubs -->
+    <section class="netflix-shelf" id="shelf-live">
+      <div class="shelf-header">
+        <h2 class="shelf-title">📺 Live TV & Video Sharing</h2>
+        <span class="shelf-hint">Real-time broadcasts, Twitch, Pluto & video portals</span>
+      </div>
+      <div class="shelf-carousel" id="carousel-live">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Master Directory Explorer Section (Grid of all 188 services) -->
+    <section class="master-directory-section" id="master-directory-section">
+      <div class="directory-filter-header">
+        <div class="dir-header-title-group">
+          <h2 class="shelf-title">🌐 Complete Streaming Library</h2>
+          <span class="services-counter" id="active-category-title">188 Services Ready</span>
+        </div>
+
+        <!-- Category Glass Pills -->
+        <div class="glass-category-bar" id="category-tabs">
+          <button class="glass-cat-pill active" data-category="all">All (188)</button>
+          <button class="glass-cat-pill" data-category="Cinema & Shows">Movies & TV</button>
+          <button class="glass-cat-pill" data-category="Anime & Animation">Anime</button>
+          <button class="glass-cat-pill" data-category="Live TV & Streams">Live TV</button>
+          <button class="glass-cat-pill" data-category="Video & Streams">Video</button>
+          <button class="glass-cat-pill" data-category="Music & Podcasts">Music</button>
+        </div>
+
+        <!-- Quality Filter Chips -->
+        <div class="dir-feature-chips">
+          <button class="glass-filter-chip" id="chip-filter-4k" data-filter="4k">4K UHD</button>
+          <button class="glass-filter-chip" id="chip-filter-autonext" data-filter="autonext">Auto-Next</button>
+        </div>
+      </div>
+
+      <!-- Master Grid -->
+      <div class="sites-grid" id="sites-grid">
+        <!-- Site cards dynamically rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Real-time Toast Alerts -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Synchronous sites data -->
+  <script src="js/sites-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
